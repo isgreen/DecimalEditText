@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DecimalEditText">
+        <attr name="prefix" format="string"/>
+        <attr name="suffix" format="string"/>
+        <attr name="maxValue" format="float"/>
+        <attr name="maxDecimalDigit" format="integer"/>
+        <attr name="maxIntegerDigit" format="integer"/>
+    </declare-styleable>
+</resources>
