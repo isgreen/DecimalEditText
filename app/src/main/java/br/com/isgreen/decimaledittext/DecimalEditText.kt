@@ -108,6 +108,7 @@ class DecimalEditText(context: Context, attrs: AttributeSet) : AppCompatEditText
         val oldValue = mValue
         mValue = convertTextToValue(editable?.toString())
 
+        // Cleaning text to show hint
         if (mValue == 0.0 && !hint.isNullOrEmpty()) {
             mIsUpdating = true
             setText("")
@@ -123,12 +124,6 @@ class DecimalEditText(context: Context, attrs: AttributeSet) : AppCompatEditText
         mIsUpdating = true
 
         this@DecimalEditText.setText(formatted)
-
-        if (mSuffix.isNotEmpty()) {
-            this@DecimalEditText.setSelection(formatted.length - SUFFIX_SPACE_SIZE - mSuffix.length)
-        } else {
-            this@DecimalEditText.setSelection(formatted.length)
-        }
     }
 
     private fun formatValue(value: Double): String {
