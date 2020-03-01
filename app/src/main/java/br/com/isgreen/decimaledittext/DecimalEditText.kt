@@ -25,10 +25,6 @@ class DecimalEditText(context: Context, attrs: AttributeSet) : AppCompatEditText
     private var mMaxIntegerDigit = INT_MAX_VALUE
     private var mMaxDecimalDigit = INT_MAX_VALUE
 
-    init {
-        init(context, attrs)
-    }
-
     private fun init(context: Context, attrs: AttributeSet) {
         val tpArray = context.obtainStyledAttributes(
             attrs, R.styleable.DecimalEditText
@@ -131,7 +127,7 @@ class DecimalEditText(context: Context, attrs: AttributeSet) : AppCompatEditText
 
     private val onTextChange = object : TextWatcher {
 
-        private var oldValue: Double = 0.toDouble()
+        private var oldValue: Double = 0.0
         private var isUpdating: Boolean = false
 
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -172,4 +168,9 @@ class DecimalEditText(context: Context, attrs: AttributeSet) : AppCompatEditText
             }
         }
     }
+
+    init {
+        init(context, attrs)
+    }
+
 }
